@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 
+import { AppRouterCacheProvider } from '@mui/material-nextjs/v14-appRouter';
+
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -16,7 +18,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      {/* children are ALL OF THE EXPORTED APP-ROUTER COMPONENTS (i.e., 
+        // the components EXPORTED FROM the page.tsx-within-folder files...) */}
+      <body className={inter.className}>
+        <AppRouterCacheProvider>
+          {children}
+        </AppRouterCacheProvider>
+      </body>
     </html>
   );
 }

@@ -8,6 +8,14 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      colors: {
+        'aimply-purple': '#5d5dff'
+      },
+
+      fontFamily: {
+        'sans': ['Helvetica', 'Arial', 'sans-serif']
+      },
+
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
